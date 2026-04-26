@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F8F7FF;
+    background-image: linear-gradient(rgba(248, 247, 255, 0.85), rgba(248, 247, 255, 0.85)), url('https://thumbs.dreamstime.com/b/silhouettes-business-teamwork-collaboration-brainstorming-ideas-success-vision-showing-partnership-leadership-377453063.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #111827;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body,
+  body.dark-mode {
+    background-color: #0F0F1A;
+    background-image: linear-gradient(rgba(15, 15, 26, 0.88), rgba(15, 15, 26, 0.88)), url('https://thumbs.dreamstime.com/b/silhouettes-business-teamwork-collaboration-brainstorming-ideas-success-vision-showing-partnership-leadership-377453063.jpg');
+    color: #F9FAFB;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-black/[0.08] transition-all duration-300;
+  }
+
+  .dark .card {
+    @apply bg-[#1A1A2E] border-white/[0.08];
+  }
+
+  .card-hover:hover {
+    @apply shadow-card-hover -translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-2.5 px-5 rounded-lg 
+           transition-all duration-200 ease-out hover:shadow-glow active:scale-[0.98] 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-2.5 px-5 rounded-lg 
+           border border-gray-200 transition-all duration-200 active:scale-[0.98];
+  }
+
+  .dark .btn-secondary {
+    @apply bg-[#1A1A2E] hover:bg-[#252542] text-gray-200 border-white/10;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-dark text-white font-medium py-2.5 px-5 rounded-lg 
+           transition-all duration-200 hover:shadow-glow-accent active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply bg-danger hover:bg-red-600 text-white font-medium py-2.5 px-5 rounded-lg 
+           transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-success {
+    @apply bg-success hover:bg-green-600 text-white font-medium py-2.5 px-5 rounded-lg 
+           transition-all duration-200 active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 
+           placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 
+           focus:border-primary transition-all duration-200;
+  }
+
+  .dark .input-field {
+    @apply bg-[#0F0F1A] border-white/10 text-gray-100 placeholder-gray-500 
+           focus:ring-primary/40;
+  }
+
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .chip-referral { @apply bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300; }
+  .chip-content { @apply bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300; }
+  .chip-social { @apply bg-pink-100 text-pink-700 dark:bg-pink-900/40 dark:text-pink-300; }
+  .chip-event { @apply bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300; }
+  .chip-survey { @apply bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300; }
+  .chip-pending { @apply bg-yellow-100 text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300; }
+  .chip-approved { @apply bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300; }
+  .chip-rejected { @apply bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300; }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-light;
+  }
+
+  .glass {
+    @apply bg-white/70 dark:bg-[#1A1A2E]/70 backdrop-blur-xl;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Score ring animation */
+@keyframes score-fill {
+  from { stroke-dashoffset: 283; }
+}
+
+.score-ring {
+  animation: score-fill 1.5s ease-out forwards;
+}
+
+/* Demo banner */
+.demo-banner {
+  background: linear-gradient(90deg, #4F46E5, #6366F1, #818CF8, #6366F1, #4F46E5);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
