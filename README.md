@@ -29,6 +29,7 @@
 ## Table of Contents
 
 - [Overview](#-overview)
+- [Demo Video](#-demo-video)
 - [Live Demo](#-live-demo)
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
@@ -57,11 +58,26 @@ Everything is backed by **Supabase** (PostgreSQL + Auth + Realtime), so all data
 
 ---
 
+## 🎬 Demo Video
+
+> Watch the full platform walkthrough on Google Drive:
+
+<div align="center">
+
+### ▶️ [Click here to watch the Demo Video](https://drive.google.com/file/d/1VbbMG1RgfvpWbWY12vFYNexf1QDe079X/view?usp=drivesdk)
+
+[![Watch Demo Video](https://img.shields.io/badge/▶%20Watch%20Demo-Google%20Drive-4285F4?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/file/d/1VbbMG1RgfvpWbWY12vFYNexf1QDe079X/view?usp=drivesdk)
+
+</div>
+
+---
+
 ## 🌐 Live Demo
 
 | Link | Description |
 |------|-------------|
 | **[https://aihackethon.vercel.app](https://aihackethon.vercel.app)** | Production deployment |
+| **[Demo Video](https://drive.google.com/file/d/1VbbMG1RgfvpWbWY12vFYNexf1QDe079X/view?usp=drivesdk)** | Full walkthrough on Google Drive |
 
 **Try it instantly — no signup needed for demo mode:**
 
@@ -513,5 +529,7 @@ Add your environment variables under **Project → Settings → Environment Vari
 Built for the hackathon · Deployed on Vercel
 
 **[aihackethon.vercel.app](https://aihackethon.vercel.app)**
+
+▶️ **[Watch Demo Video](https://drive.google.com/file/d/1VbbMG1RgfvpWbWY12vFYNexf1QDe079X/view?usp=drivesdk)**
 
 </div>
